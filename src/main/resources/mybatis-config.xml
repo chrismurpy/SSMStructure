@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- Core configuration file -->
+<configuration>
+    <typeAliases>
+        <package name="com.murphy.bean"/>
+    </typeAliases>
+
+    <!-- Each Mapper.xml needs to be registered -->
+    <mappers>
+        <mapper class="com.murphy.mapper.UserMapper"/>
+    </mappers>
+</configuration>

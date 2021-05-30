@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 一个mapper对应一个接口 -->
+<mapper namespace="com.murphy.dao.UserMapper">
+    <insert id="addUser" parameterType="User">
+        insert into user(userId, username, password) values (#{userId},#{username},#{password});
+    </insert>
+
+    <delete id="deleteById" parameterType="int">
+        delete from user
+        where userId = #{userId};
+    </delete>
+
+    <update id="updateUser" parameterType="User">
+        update user set username=#{username},password=#{password}
+        where userId=#{userId};
+    </update>
+
+    <select id="findById" resultType="User">
+        select * from user
+        where userId = #{userId};
+    </select>
+
+    <select id="findAll" resultType="User">
+        select * from user;
+    </select>
+
+</mapper>
